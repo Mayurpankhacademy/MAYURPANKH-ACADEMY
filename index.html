@@ -8,129 +8,318 @@
 
 <style>
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-  background:#f7f5ef;
-  color:#102a43;
+    font-family:Arial, sans-serif;
+    background:#f5f2ea;
+    color:#17243a;
+    line-height:1.6;
 }
 
+/* HEADER */
 header{
-  background:#0b1f3a;
-  color:white;
-  padding:18px 7%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+    background:#071a33;
+    color:white;
+    padding:14px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,0.25);
 }
 
 .logo{
-  font-size:24px;
-  font-weight:bold;
-}
-.logo img{
-  height:60px;
-  width:auto;
-  display:block;
-}
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:22px;
-  font-size:15px;
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
+.logo img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+}
+
+.logo-text{
+    font-size:21px;
+    font-weight:bold;
+    letter-spacing:.5px;
+}
+
+.logo-text span{
+    display:block;
+    color:#d6a84f;
+    font-size:12px;
+    font-weight:normal;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:22px;
+    font-size:15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#e0b45c;
+}
+
+/* HERO */
 .hero{
-  padding:75px 7%;
-  text-align:center;
-  background:linear-gradient(135deg,#0b1f3a,#173f67);
-  color:white;
+    background:
+    linear-gradient(rgba(7,26,51,.92),rgba(7,26,51,.96)),
+    radial-gradient(circle at top,#d6a84f,transparent 40%);
+    color:white;
+    text-align:center;
+    padding:75px 20px 85px;
+}
+
+.hero img{
+    width:115px;
+    height:115px;
+    object-fit:contain;
+    margin-bottom:18px;
 }
 
 .hero h1{
-  font-size:42px;
-  margin-bottom:15px;
+    font-size:42px;
+    color:#e2b65e;
+    margin-bottom:10px;
+}
+
+.hero h2{
+    font-size:23px;
+    margin-bottom:12px;
 }
 
 .hero p{
-  font-size:18px;
-  margin-bottom:28px;
+    max-width:700px;
+    margin:auto;
+    color:#e8edf5;
+    font-size:17px;
+}
+
+.hero-buttons{
+    margin-top:28px;
 }
 
 .btn{
-  display:inline-block;
-  padding:13px 25px;
-  background:#d4af37;
-  color:#102a43;
-  text-decoration:none;
-  border-radius:7px;
-  font-weight:bold;
-  margin:5px;
+    display:inline-block;
+    padding:12px 25px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+    margin:6px;
 }
 
-.section{
-  padding:55px 7%;
-  text-align:center;
+.btn-gold{
+    background:#d6a84f;
+    color:#071a33;
 }
 
-.section h2{
-  font-size:30px;
-  margin-bottom:30px;
+.btn-outline{
+    border:1px solid #d6a84f;
+    color:white;
 }
 
+/* SECTION */
+section{
+    padding:55px 6%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    font-size:30px;
+    color:#071a33;
+}
+
+.section-title p{
+    color:#667085;
+}
+
+/* CARDS */
 .cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:22px;
-  max-width:1100px;
-  margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:24px;
 }
 
 .card{
-  background:white;
-  padding:25px;
-  border-radius:12px;
-  box-shadow:0 4px 18px rgba(0,0,0,.08);
-  text-align:left;
+    background:white;
+    border-radius:12px;
+    padding:28px;
+    box-shadow:0 5px 20px rgba(0,0,0,.09);
+    border-top:4px solid #d6a84f;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 28px rgba(0,0,0,.14);
 }
 
 .card h3{
-  margin-bottom:12px;
-  font-size:21px;
+    color:#071a33;
+    margin-bottom:10px;
+    font-size:21px;
+}
+
+.card p{
+    color:#596579;
 }
 
 .price{
-  font-size:25px;
-  font-weight:bold;
-  margin:18px 0;
-  color:#b08a19;
+    font-size:25px;
+    font-weight:bold;
+    color:#c18d2d;
+    margin:15px 0;
 }
 
+.card-btn{
+    display:inline-block;
+    background:#071a33;
+    color:white;
+    padding:10px 20px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FEATURES */
+.features{
+    background:#071a33;
+    color:white;
+}
+
+.features .section-title h2{
+    color:white;
+}
+
+.feature-box{
+    text-align:center;
+    padding:25px;
+}
+
+.feature-icon{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.feature-box h3{
+    color:#e0b45c;
+    margin-bottom:7px;
+}
+
+/* ABOUT */
+.about{
+    background:#fff;
+}
+
+.about-content{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.about-content p{
+    color:#596579;
+    font-size:17px;
+}
+
+/* CONTACT */
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.contact-box a{
+    color:#071a33;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* FOOTER */
 footer{
-  background:#0b1f3a;
-  color:white;
-  text-align:center;
-  padding:25px;
-  margin-top:30px;
+    background:#050f20;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
 }
 
+footer strong{
+    color:#d6a84f;
+}
+
+footer p{
+    margin:5px;
+    color:#cbd3df;
+}
+
+/* MOBILE */
 @media(max-width:700px){
-  header{
-    flex-direction:column;
-    gap:15px;
-  }
 
-  nav a{
-    margin:0 7px;
-  }
+    header{
+        padding:10px 4%;
+    }
 
-  .hero h1{
-    font-size:32px;
-  }
+    .logo img{
+        width:48px;
+        height:48px;
+    }
+
+    .logo-text{
+        font-size:16px;
+    }
+
+    nav a{
+        margin-left:9px;
+        font-size:12px;
+    }
+
+    .hero{
+        padding:55px 18px 65px;
+    }
+
+    .hero img{
+        width:95px;
+        height:95px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero h2{
+        font-size:19px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    section{
+        padding:45px 5%;
+    }
+
+    .section-title h2{
+        font-size:25px;
+    }
 }
 </style>
 </head>
@@ -138,105 +327,239 @@ footer{
 <body>
 
 <header>
-  <div class="logo">
-  <img src="logo.JPG" alt="Mayurpankh Academy Logo">
+
+<div class="logo">
+    <img src="logo.JPG" alt="Mayurpankh Academy Logo">
+    <div class="logo-text">
+        MAYURPANKH ACADEMY
+        <span>Competitive Exams • Courses • Test Series</span>
+    </div>
 </div>
 
-  <nav>
+<nav>
     <a href="#courses">Courses</a>
-    <a href="#tests">Test Series</a>
+    <a href="#tests">Tests</a>
+    <a href="#about">About</a>
     <a href="#contact">Contact</a>
-  </nav>
+</nav>
+
 </header>
 
+
+<!-- HERO -->
+
 <section class="hero">
-  <h1>Mayurpankh Academy</h1>
-  <p>स्पर्धा परीक्षेच्या तयारीसाठी विश्वासाचं व्यासपीठ</p>
 
-  <a href="#courses" class="btn">Explore Courses</a>
-  <a href="#tests" class="btn">Test Series</a>
+<img src="logo.JPG" alt="Mayurpankh Academy">
+
+<h1>Mayurpankh Academy</h1>
+
+<h2>स्पर्धा परीक्षा तयारीसाठी विश्वासाचं व्यासपीठ</h2>
+
+<p>
+MPSC, Banking, Police Bharti आणि विविध स्पर्धा परीक्षांसाठी
+अभ्यासक्रम, सराव प्रश्नपत्रिका आणि नियमित Test Series.
+</p>
+
+<div class="hero-buttons">
+    <a href="#courses" class="btn btn-gold">Courses पाहा</a>
+    <a href="#tests" class="btn btn-outline">Test Series</a>
+</div>
+
 </section>
 
-<section class="section" id="courses">
-  <h2>📚 Paid Courses</h2>
 
-  <div class="cards">
+<!-- COURSES -->
 
-    <div class="card">
-      <h3>Police Bharti Complete Course</h3>
-      <p>पोलीस भरती परीक्षेसाठी संपूर्ण मार्गदर्शन.</p>
+<section id="courses">
 
-      <div class="price">₹999</div>
+<div class="section-title">
+    <h2>📚 Our Courses</h2>
+    <p>तुमच्या स्पर्धा परीक्षा तयारीसाठी योग्य अभ्यासक्रम</p>
+</div>
 
-      <a href="#" class="btn">BUY NOW</a>
-    </div>
+<div class="cards">
 
-    <div class="card">
-      <h3>Competitive Exam Course</h3>
-      <p>स्पर्धा परीक्षांसाठी विषयानुसार अभ्यासक्रम.</p>
+<div class="card">
+    <h3>MPSC Preparation</h3>
+    <p>
+    MPSC परीक्षेसाठी विषयानुसार अभ्यास,
+    सराव प्रश्न आणि परीक्षाभिमुख मार्गदर्शन.
+    </p>
+    <div class="price">Coming Soon</div>
+    <a href="#contact" class="card-btn">More Details</a>
+</div>
 
-      <div class="price">₹799</div>
+<div class="card">
+    <h3>Police Bharti</h3>
+    <p>
+    पोलीस भरतीसाठी गणित, बुद्धिमत्ता,
+    मराठी, सामान्य ज्ञान आणि सराव टेस्ट.
+    </p>
+    <div class="price">Coming Soon</div>
+    <a href="#contact" class="card-btn">More Details</a>
+</div>
 
-      <a href="#" class="btn">BUY NOW</a>
-    </div>
+<div class="card">
+    <h3>Banking Exams</h3>
+    <p>
+    Banking परीक्षांसाठी Quantitative Aptitude,
+    Reasoning, English आणि General Awareness.
+    </p>
+    <div class="price">Coming Soon</div>
+    <a href="#contact" class="card-btn">More Details</a>
+</div>
 
-  </div>
+</div>
 </section>
 
-<section class="section" id="tests">
-  <h2>📝 Paid Test Series</h2>
 
-  <div class="cards">
+<!-- TEST SERIES -->
 
-    <div class="card">
-      <h3>Police Bharti Test Series</h3>
-      <p>50 Tests • 5000+ Questions</p>
+<section id="tests">
 
-      <div class="price">₹199</div>
+<div class="section-title">
+    <h2>📝 Test Series</h2>
+    <p>नियमित online tests द्वारे स्वतःची तयारी तपासा</p>
+</div>
 
-      <a href="#" class="btn">BUY NOW</a>
-    </div>
+<div class="cards">
 
-    <div class="card">
-      <h3>Competitive Exam Test Series</h3>
-      <p>अद्ययावत प्रश्नसंच आणि सराव परीक्षा.</p>
+<div class="card">
+    <h3>Daily Practice Test</h3>
+    <p>
+    दररोज निवडक प्रश्नांचा सराव.
+    </p>
+    <div class="price">Online Test</div>
+    <a href="#contact" class="card-btn">Start Test</a>
+</div>
 
-      <div class="price">₹299</div>
+<div class="card">
+    <h3>Full Length Test</h3>
+    <p>
+    परीक्षेच्या pattern नुसार पूर्ण mock test.
+    </p>
+    <div class="price">Online Test</div>
+    <a href="#contact" class="card-btn">Start Test</a>
+</div>
 
-      <a href="#" class="btn">BUY NOW</a>
-    </div>
+<div class="card">
+    <h3>Previous Year Papers</h3>
+    <p>
+    मागील प्रश्नपत्रिकांचा सराव आणि
+    परीक्षाभिमुख प्रश्नसंच.
+    </p>
+    <div class="price">Practice</div>
+    <a href="#contact" class="card-btn">View Tests</a>
+</div>
 
-  </div>
+</div>
 </section>
 
-<section class="section">
-  <h2>🎓 Why Mayurpankh Academy?</h2>
 
-  <div class="cards">
+<!-- FEATURES -->
 
-    <div class="card">
-      <h3>Quality Content</h3>
-      <p>परीक्षाभिमुख आणि दर्जेदार अभ्यास साहित्य.</p>
-    </div>
+<section class="features">
 
-    <div class="card">
-      <h3>Regular Tests</h3>
-      <p>सरावासाठी नियमित online test series.</p>
-    </div>
+<div class="section-title">
+    <h2>Why Mayurpankh Academy?</h2>
+    <p style="color:#cbd3df;">तुमच्या यशासाठी आमची बांधिलकी</p>
+</div>
 
-    <div class="card">
-      <h3>Expert Guidance</h3>
-      <p>योग्य मार्गदर्शन आणि परीक्षेची रणनीती.</p>
-    </div>
+<div class="cards">
 
-  </div>
+<div class="feature-box">
+    <div class="feature-icon">📖</div>
+    <h3>Quality Content</h3>
+    <p>परीक्षाभिमुख आणि दर्जेदार अभ्यास साहित्य.</p>
+</div>
+
+<div class="feature-box">
+    <div class="feature-icon">📝</div>
+    <h3>Regular Tests</h3>
+    <p>नियमित online test series आणि सराव.</p>
+</div>
+
+<div class="feature-box">
+    <div class="feature-icon">🎯</div>
+    <h3>Exam Focused</h3>
+    <p>परीक्षेच्या गरजेनुसार अभ्यास आणि प्रश्नसंच.</p>
+</div>
+
+<div class="feature-box">
+    <div class="feature-icon">💡</div>
+    <h3>Expert Guidance</h3>
+    <p>योग्य मार्गदर्शन आणि अभ्यासाची रणनीती.</p>
+</div>
+
+</div>
 </section>
 
-<footer id="contact">
-  <h3>🦚 MAYURPANKH ACADEMY</h3>
-  <p>Competitive Exam Courses & Test Series</p>
-  <br>
-  <p>© 2026 Mayurpankh Academy</p>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<div class="section-title">
+    <h2>About Mayurpankh Academy</h2>
+</div>
+
+<div class="about-content">
+
+<p>
+<strong>Mayurpankh Academy</strong> हे विविध स्पर्धा परीक्षांची
+तयारी करणाऱ्या विद्यार्थ्यांसाठी तयार केलेले डिजिटल व्यासपीठ आहे.
+</p>
+
+<p style="margin-top:15px;">
+दर्जेदार अभ्यास साहित्य, नियमित Test Series आणि
+परीक्षाभिमुख मार्गदर्शनाच्या माध्यमातून विद्यार्थ्यांना
+त्यांच्या ध्येयापर्यंत पोहोचण्यासाठी मदत करणे हे आमचे उद्दिष्ट आहे.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="section-title">
+    <h2>Contact Us</h2>
+    <p>अधिक माहितीसाठी आमच्याशी संपर्क करा</p>
+</div>
+
+<div class="contact-box">
+
+<h3>🦚 MAYURPANKH ACADEMY</h3>
+
+<p style="margin-top:10px;">
+Competitive Exam Courses & Test Series
+</p>
+
+<p style="margin-top:18px;">
+📲 Telegram • YouTube • Online Courses
+</p>
+
+<a href="#" class="btn btn-gold">Join Us</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p><strong>🦚 MAYURPANKH ACADEMY</strong></p>
+
+<p>Competitive Exam Courses & Test Series</p>
+
+<p>© 2026 Mayurpankh Academy. All Rights Reserved.</p>
+
 </footer>
 
 </body>
